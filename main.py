@@ -24,7 +24,7 @@ pyodide_http.patch_all()
 
 import os
 
-api_key = os.environ("APIKEYAI")
+api_key = os.environ["APIKEYAI"]
 if not api_key:
     raise ValueError("API-Key fehlt. Stelle sicher, dass das Secret korrekt gesetzt ist.")
 
