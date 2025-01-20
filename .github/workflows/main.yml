@@ -16,4 +16,4 @@ jobs:
             - name: start bot
               env:
                 TOKEN: ${{ secrets.APIKEYAI }}
-              run: python main.py
+              run: python /reqaiproject/main.py
