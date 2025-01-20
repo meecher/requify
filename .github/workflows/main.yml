@@ -1,4 +1,4 @@
-- name: Run tests
+- name: main.yml
   env:
     APIKEYAI: ${{ secrets.APIKEYAI }}
   run: |
