@@ -21,4 +21,4 @@ jobs:
       run: python -c 'import os;print(os.environ)'
       env:
         APIKEYAI: ${{ secrets.APIKEYAI }} 
-        APIKEY: ${{ secrets.APIKEY }} 
+        APIKEY: ${{ secrets.APIKEYAI }} 
