@@ -22,3 +22,7 @@ jobs:
       env:
         APIKEYAI: ${{ secrets.APIKEYAI }} 
         APIKEY: ${{ secrets.APIKEY }} 
+    - name: Debugging Secret
+    run: echo "API-Key: ${{ secrets.APIKEYAI }}"
+    env:
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
