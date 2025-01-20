@@ -24,7 +24,8 @@ pyodide_http.patch_all()
 
 
 
-OPENAI_API_KEY = os.environ["APIKEY"]
+OPENAI_API_KEY = os.environ["APIKEYAI"]
+print(OPENAI_API_KEY)
 
 url = "https://api.openai.com/v1/chat/completions"
 headers = {"Content-Type": "application/json",
