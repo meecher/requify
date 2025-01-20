@@ -23,7 +23,7 @@ pyodide_http.patch_all()
 #df_collect = pd.DataFrame(columns=['Role', 'Content'], index=range(50))
 
 
-#OPENAI_API_KEY = "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"
+
 OPENAI_API_KEY = os.environ["APIKEY"]
 
 url = "https://api.openai.com/v1/chat/completions"
