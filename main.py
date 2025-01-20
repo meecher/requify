@@ -48,7 +48,7 @@ def send():
     #currentmessage = 1 #counter for appending current message to df
     #df_current = pd.DataFrame(columns=['Role', 'Content'], index=range(2))
 
-    
+#wadads    
     #defines role of gpt model
     if len(messages) == 0:
         messages.append({"role": "system", "content": "Requirements Engineer supporting the creation of new requirements."})
