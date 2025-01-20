@@ -1,9 +1,6 @@
 name: Run Python Script
 on:
   workflow_dispatch:
-  
-env:
-  APIKEYAI: ${{ secrets.APIKEYAI }}
 
 jobs:
   run-python:
@@ -17,8 +14,10 @@ jobs:
         with:
           python-version: '3.8'
 
+      - name: Install Dependencies
+        run: |
+          pip install -r requirements.txt
+
       - name: Run Python Script
         run: |
-          ls -al
-          pip install requests
           python main.py

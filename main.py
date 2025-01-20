@@ -1,9 +1,8 @@
 #!include imports in pyscript.toml
 #Based on https://pyscript.com/@adec3dd4-c366-46d3-9d45-84d3b0996a43/chatgpt-demo/latest
-import js
 
+import js
 import os
-import csv
 import requests
 import pandas as pd
 from js import Uint8Array, File, URL, document
