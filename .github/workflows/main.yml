@@ -1,28 +1,19 @@
-name: python
-
-on: push
-
-env:
-  APIKEY: ${{secrets.APIKEY}}
-  APIKEYAI: ${{secrets.APIKEYAI}}
-
+name: build bot.py
+on: [push]
 
 jobs:
-  test_env:
-    environment: github-pages
-    runs-on: ubuntu-latest
-    steps:
-    - name: Set up Python
-      uses: actions/setup-python@v2
-      with:
-        python-version: 3.8
-        
-    - name: Test env vars for python
-      run: python -c 'import os;print(os.environ)'
-      env:
-        APIKEYAI: ${{ secrets.APIKEYAI }} 
-        APIKEY: ${{ secrets.APIKEY }} 
-    - name: Debugging Secret
-    run: echo "API-Key: ${{ secrets.APIKEYAI }}"
-    env:
-      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - name: load content
+              uses: actions/checkout@v2
+              
+            - name: load python
+              uses: actions/setup-python@v4
+              with:
+                python-version: '3.8' # install the python version needed
+
+            - name: start bot
+              env:
+                TOKEN: ${{ secrets.APIKEYAI }}
+              run: python main.py
