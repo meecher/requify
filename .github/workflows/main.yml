@@ -19,4 +19,5 @@ jobs:
     - name: Test env vars for python
       run: python -c 'import os;print(os.environ)'
       env:
+        APIKEYAI: ${{ secrets.APIKEYAI }} 
         APIKEY: ${{ secrets.APIKEY }} 
