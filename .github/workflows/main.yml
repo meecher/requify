@@ -19,5 +19,6 @@ jobs:
 
       - name: Run Python Script
         run: |
+          ls -al
           pip install requests
           python main.py
