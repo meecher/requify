@@ -1,5 +1,21 @@
-- name: main.yml
-  env:
-    APIKEYAI: ${{ secrets.APIKEYAI }}
-  run: |
-    main.py
+- name: Run Pyhton Script
+on:
+  workflow_dispatch:
+env:
+  APIKEYAI: ${{ secrets.APIKEYAI }}
+jobs: 
+  run-python:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.8'
+
+      - name: Run Python Script
+        run: |
+          pip install requests
+          python main.py
