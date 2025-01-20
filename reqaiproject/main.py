@@ -22,10 +22,16 @@ pyodide_http.patch_all()
 #df_collect = pd.DataFrame(columns=['Group', 'Time', 'Userinput', 'Response', 'Result'], index=range(50))
 #df_collect = pd.DataFrame(columns=['Role', 'Content'], index=range(50))
 
+import os
+
+api_key = os.getenv("OPENAI_API_KEY")
+if not api_key:
+    raise ValueError("API-Key fehlt. Stelle sicher, dass das Secret korrekt gesetzt ist.")
+
+print(f"API-Key geladen: {api_key[:4]}***")  # Nur für Debugging (nicht den ganzen Key anzeigen)
 
 
-OPENAI_API_KEY = os.environ["APIKEYAI"]
-print(OPENAI_API_KEY)
+OPENAI_API_KEY = api_key
 
 url = "https://api.openai.com/v1/chat/completions"
 headers = {"Content-Type": "application/json",
