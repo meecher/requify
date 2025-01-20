@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Requify Prototype</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="https://pyscript.net/releases/2023.03.1/pyscript.css" />
+    <link rel="stylesheet" href="style.css">
+    <script defer src="https://pyscript.net/releases/2023.03.1/pyscript.js"></script>
+</head>
+<body>
+    <py-config src="./pyscript.toml"></py-config>
+    
+    <!-- UI -->
+    <div id="div1" class="container">
+        <div class="section">
+            <img style="vertical-align:middle;margin:-50px 0px; float:left" src="Requifylogo.png" width="150" height="150"> </img> 
+            <h4 class="title is-4">
+                Welcome to Requify!
+            </h4>
+
+            <div class="container">
+                <div class="image">
+                  <img src="platzhalter.png">
+                </div>
+                <div class="text">
+                  <p>Schauen Sie sich die Abbildung genau an. Analysieren Sie deren Bestandteile, Merkmale und mögliche Funktionen.
+                    <br>Beschreiben Sie die Abbildung, indem Sie Anforderungen formulieren, welche später umgesetzt werden sollen.
+                    Eine Anforderung ist ein klarer, überprüfbarer Satz, der beschreibt, was ein System oder Produkt leisten soll oder welche Eigenschaften es haben soll.
+                  </p>
+                </div>
+            </div>
+
+            <p style="margin: 10px 0px">How can I assist you?</p>
+
+
+            <input  style="margin: 0px 0px"
+                    id="userInput" 
+                    type="text" 
+                    class="input is-info" 
+                    widht="50"
+                    height="500"
+                    placeholder="Nachricht"></input>
+            <br>
+            
+            <button  id="submit-guess-btn"
+                        class="button is-primary mt-3"
+                        type="submit" 
+                        py-click="send()">Send</button>
+                        
+            <button  id="download"
+                        class="button is-primary mt-3"
+                        type="submit" 
+                        py-click="downloadFile()">Create CSV</button>
+
+        </div>
+
+    </div>
+
+    <py-script src="./main.py"></py-script>
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+import requests
+
+webhook_url = "https://script.google.com/macros/s/AKfycbxc7vIS7BIb_Nh3Ici4yBmk-jH18_EuctE30pQ1eey84Qy-Nj-BSL6eKAcEBjga72pg/exec"
+
+try:
+    response = requests.get(webhook_url)
+    print(f"Status Code: {response.status_code}")
+    print("Rohantwort:", response.text)  # Antwort anzeigen
+    
+    if response.status_code == 200:
+        data = response.json()  # Fehlerquelle
+        print("Daten:", data)
+    else:
+        print(f"Fehler: {response.status_code}")
+except Exception as e:
+    print("Fehler beim Senden:", e)

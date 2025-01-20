@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>ReqAI Prototype Landing</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="https://pyscript.net/releases/2023.03.1/pyscript.css" />
+    <link rel="stylesheet" href="style.css">
+    <script defer src="https://pyscript.net/releases/2023.03.1/pyscript.js"></script>
+</head>
+<body>
+    <py-config src="./pyscript.toml"></py-config>
+    
+    <!-- UI -->
+    <div id="div1" class="container">
+        <div class="section">
+            <img style="vertical-align:middle;margin:0px 350px" src="Requifylogo.png" width="150" height="150"> </img> 
+            <h4 class="title is-4" style="margin: 50px 50px; float:bottom">
+                Welcome to the Requify experiment! Enter your ID in the field below to continue.
+            </h4>
+        
+            <input  style="margin: 0px 0px"
+                    id="userInput" 
+                    type="text" 
+                    class="input is-info" 
+                    widht="50"
+                    height="500"
+                    placeholder="ID"></input>
+            <br>
+            
+            <button  id="submit-guess-btn"
+                        class="button is-primary mt-3"
+                        type="submit" 
+                        py-click="send()">Send</button>
+
+        </div>
+
+    </div>
+
+    <py-script src="./mainlp.py"></py-script>
+
+</body>
+</html>
