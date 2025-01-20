@@ -1,10 +1,11 @@
-- name: Run Pyhton Script
+name: Run Python Script
 on:
   workflow_dispatch:
+  
 env:
   APIKEYAI: ${{ secrets.APIKEYAI }}
-  
-jobs: 
+
+jobs:
   run-python:
     runs-on: ubuntu-latest
     steps:
